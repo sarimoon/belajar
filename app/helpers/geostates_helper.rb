@@ -1,0 +1,2 @@
+module GeostatesHelper
+end

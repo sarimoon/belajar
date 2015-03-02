@@ -1,0 +1,52 @@
+<%= form_for([:admin,@geocountry], html: {class: "form-horizontal"}) do |f| %>
+  <% if @geocountry.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@geocountry.errors.count, "error") %> prohibited this geocountry from being saved:</h2>
+
+      <ul>
+      <% @geocountry.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="form-group">                                        
+	<label class="col-md-3 col-xs-12 control-label"><%= f.label :short %></label>
+	<div class="col-md-6 col-xs-12">
+		<div class="input-group">
+			<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+			<%= f.text_field :short, class:"form-control" %>
+		</div>            
+		<span class="help-block"></span>
+	</div>
+</div>
+
+<div class="form-group">                                        
+	<label class="col-md-3 col-xs-12 control-label"><%= f.label :name %></label>
+	<div class="col-md-6 col-xs-12">
+		<div class="input-group">
+			<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+			<%= f.text_field :name, class:"form-control" %>
+		</div>            
+		<span class="help-block"></span>
+	</div>
+</div>
+
+<div class="form-group">                                        
+	<label class="col-md-3 col-xs-12 control-label"><%= f.label :sort_order %></label>
+	<div class="col-md-6 col-xs-12">
+		<div class="input-group">
+			<span class="input-group-addon"><span class="fa fa-pencil"></span></span>
+			<%= f.text_field :sort_order, class:"form-control" %>
+		</div>            
+		<span class="help-block"></span>
+	</div>
+</div>
+  
+<div class="panel-footer">
+	<%= f.submit 'Clear Form', :type => 'reset', class: 'btn btn-default' %>
+	<%= f.submit 'Submit', :type => 'submit', class: 'btn btn-primary pull-right' %>
+</div>
+  
+<% end %>

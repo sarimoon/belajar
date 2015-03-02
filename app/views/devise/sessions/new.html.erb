@@ -1,0 +1,50 @@
+<div class="login-container">
+  <div class="login-box animated fadeInDown">
+    <div class="login-logo"></div>
+    <div class="login-body">
+      <div class="login-title"><strong>Login</strong></div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <% flash.each do |name, msg| %>
+          <%= content_tag(:div, msg, class: "alert") %>
+        <% end %>
+        <div class="form-group">
+          <div class="col-md-12">
+              <%= f.label :email, :class => "mylabel" %><br />
+              <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+              <%= f.label :password, :class => "mylabel" %>
+              <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+          </div>
+        </div><br><br>
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group">
+            <div class="col-md-12">
+              <div class="field">
+                <%= f.check_box :remember_me, :class => "mylabel" %>
+                <%= f.label :remember_me, :class => "mylabel" %>
+              </div>   
+            </div>
+          </div>
+        <% end -%>
+        
+        <div class="form-group">
+          <div class="col-md-6">
+            <%= f.submit "Log in", :class => "btn btn-info btn-block" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="login-footer">
+      <div class="pull-left">
+        &copy; 2014 AppName
+      </div>
+      <div class="pull-right">
+        <%= link_to 'Home', root_path %> |  
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

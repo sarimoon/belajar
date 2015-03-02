@@ -1,0 +1,31 @@
+<h1>Listing geocities</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+	  <th>ID</th>
+	  <th>Short</th>
+	  <th>Name</th>
+	  <th>Sort Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @geocities.each do |geocity| %>
+      <tr>
+	    <td><%= geocity.id %></td>
+		<td><%= geocity.short %></td>
+		<td><%= geocity.name %></td>
+		<td><%= geocity.sort_order %></td>
+        <td><%= link_to 'Show', geocity %></td>
+        <td><%= link_to 'Edit', edit_geocity_path(geocity) %></td>
+        <td><%= link_to 'Destroy', geocity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Geocity', new_geocity_path %>

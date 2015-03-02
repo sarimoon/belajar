@@ -1,0 +1,31 @@
+<h1>Listing geodistricts</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+	  <th>ID</th>
+	  <th>Short</th>
+	  <th>Name</th>
+	  <th>Sort Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @geodistricts.each do |geodistrict| %>
+      <tr>
+	    <td><%= geodistrict.id %></td>
+		<td><%= geodistrict.short %></td>
+		<td><%= geodistrict.name %></td>
+		<td><%= geodistrict.sort_order %></td>
+        <td><%= link_to 'Show', geodistrict %></td>
+        <td><%= link_to 'Edit', edit_geodistrict_path(geodistrict) %></td>
+        <td><%= link_to 'Destroy', geodistrict, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Geodistrict', new_geodistrict_path %>

@@ -1,0 +1,33 @@
+<div class="login-container">
+  <div class="login-box animated fadeInDown">
+    <div class="login-logo"></div>
+    <div class="login-body">
+      <div class="login-title"><strong>Forgot Your Password?</strong></div>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <div class="alert">
+          <%= devise_error_messages! %>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+              <%= f.label :email, :class => "mylabel" %><br />
+              <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-6">
+          	<br>
+            <%= f.submit "Reset Password", :class => "btn btn-info btn-block" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="login-footer">
+      <div class="pull-left">
+        &copy; 2014 AppName
+      </div>
+      <div class="pull-right">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

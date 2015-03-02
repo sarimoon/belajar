@@ -1,0 +1,31 @@
+<h1>Listing geostates</h1>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+	  <th>ID</th>
+	  <th>Short</th>
+	  <th>Name</th>
+	  <th>Sort Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @geostates.each do |geostate| %>
+      <tr>
+	    <td><%= geostate.id %></td>
+		<td><%= geostate.short %></td>
+		<td><%= geostate.name %></td>
+		<td><%= geostate.sort_order %></td>
+        <td><%= link_to 'Show', geostate %></td>
+        <td><%= link_to 'Edit', edit_geostate_path(geostate) %></td>
+        <td><%= link_to 'Destroy', geostate, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Geostate', new_geostate_path %>

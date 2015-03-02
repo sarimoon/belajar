@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Short:</strong>
+  <%= @geocity.short %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @geocity.name %>
+</p>
+
+<p>
+  <strong>Sort Order:</strong>
+  <%= @geocity.sort_order %>
+</p>
+
+<%= link_to 'Edit', edit_geocity_path(@geocity) %> |
+<%= link_to 'Back', geocities_path %>

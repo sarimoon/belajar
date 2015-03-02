@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Short:</strong>
+  <%= @geodistrict.short %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @geodistrict.name %>
+</p>
+
+<p>
+  <strong>Sort Order:</strong>
+  <%= @geodistrict.sort_order %>
+</p>
+
+<%= link_to 'Edit', edit_geodistrict_path(@geodistrict) %> |
+<%= link_to 'Back', geodistricts_path %>

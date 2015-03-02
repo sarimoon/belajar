@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Short:</strong>
+  <%= @geostate.short %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @geostate.name %>
+</p>
+
+<p>
+  <strong>Sort Order:</strong>
+  <%= @geostate.sort_order %>
+</p>
+
+<%= link_to 'Edit', edit_geostate_path(@geostate) %> |
+<%= link_to 'Back', geostates_path %>

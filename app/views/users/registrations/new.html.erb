@@ -1,0 +1,54 @@
+<div class="login-container">
+  <div class="login-box animated fadeInDown">
+    <div class="login-logo"></div>
+    <div class="login-body">
+      <div class="login-title"><strong>Signup</strong></div>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <div class="alert">
+          <%= devise_error_messages! %>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+              <%= f.label :email, :class => "mylabel" %><br />
+              <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+              <%= f.label :role, :class => "mylabel" %><br />
+              <%= f.text_field :role, :class => "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+              <%= f.label :password, :class => "mylabel" %>
+              <% if @validatable %>
+                <em class="mylabel">(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-md-12">
+              <%= f.label :password_confirmation, :class => "mylabel" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "off", :class => "form-control" %>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <div class="col-md-6">
+            <%= f.submit "Sign up", :class =>  "btn btn-info btn-block" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="login-footer">
+      <div class="pull-left">
+        &copy; 2014 AppName
+      </div>
+      <div class="pull-right">
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>

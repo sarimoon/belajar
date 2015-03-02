@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Short:</strong>
+  <%= @geocountry.short %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @geocountry.name %>
+</p>
+
+<p>
+  <strong>Sort Order:</strong>
+  <%= @geocountry.sort_order %>
+</p>
+
+<%= link_to 'Edit', edit_admin_geocountry_path(@geocountry) %> |
+<%= link_to 'Back', geocountries_path %>

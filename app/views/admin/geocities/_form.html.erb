@@ -1,0 +1,32 @@
+<%= form_for(@geocity) do |f| %>
+  <% if @geocity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@geocity.errors.count, "error") %> prohibited this geocity from being saved:</h2>
+
+      <ul>
+      <% @geocity.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+	<%= f.label :short %><br/>
+	<%= f.text_field :short %>
+  </div>
+  
+  <div class="field">
+	<%= f.label :name %><br/>
+	<%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
+	<%= f.label :sort_order %><br/>
+	<%= f.text_field :sort_order %>
+  </div>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

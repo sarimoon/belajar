@@ -1,0 +1,63 @@
+<!-- PAGE TITLE -->
+<div class="page-title">                    
+	<h2><span class="fa"></span> Listing Country</h2>
+</div>
+<!-- END PAGE TITLE -->
+
+<!-- PAGE CONTENT WRAPPER -->
+<div class="page-content-wrap">
+	<div class="row">
+		<div class="col-md-12">
+			
+			<!-- START DEFAULT DATATABLE -->
+			<div class="panel panel-default">
+				<div class="panel-heading">                                
+					<h3 class="panel-title">Default</h3>
+					<ul class="panel-controls">
+						<li><a href="#" class="panel-collapse"><span class="fa fa-angle-down"></span></a></li>
+						<li><a href="#" class="panel-refresh"><span class="fa fa-refresh"></span></a></li>
+						<li><a href="#" class="panel-remove"><span class="fa fa-times"></span></a></li>
+					</ul>                                
+				</div>
+				<div class="panel-body">
+			
+<table class="table datatable">
+  <thead>
+    <tr>
+	  <th>ID</th>
+	  <th>Short</th>
+	  <th>Name</th>
+	  <th>Sort Order</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @geocountries.each do |geocountry| %>
+      <tr>
+	    <td><%= geocountry.id %></td>
+		<td><%= geocountry.short %></td>
+		<td><%= geocountry.name %></td>
+		<td><%= geocountry.sort_order %></td>
+        <!--
+		<td><%= link_to 'Show', admin_geocountry_path( geocountry ) %></td>
+        <td><%= link_to 'Edit', edit_admin_geocountry_path( geocountry ) %></td>
+        <td><%= link_to 'Destroy', admin_geocountry_path( geocountry ), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+		-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Geocountry', new_admin_geocountry_path %>
+
+				</div>
+			</div>
+			<!-- END DEFAULT DATATABLE -->
+			
+		</div>
+	</div>
+</div>
+<!-- END PAGE CONTENT WRAPPER -->
